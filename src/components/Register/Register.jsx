@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 
 const Register = () => {
+
+    
+
     return (
         <div className="hero my-20">
             <div className="hero-content flex-col md:flex-row gap-20">
