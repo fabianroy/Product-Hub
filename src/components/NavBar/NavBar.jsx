@@ -1,7 +1,23 @@
 import { NavLink } from "react-router-dom";
 import logo from '/ProductHub.png'
+import useAuth from "../../hooks/useAuth";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const NavBar = () => {
+
+    const { user, logOut } = useAuth();
+
+    const handleSignOut = () => {
+        logOut()
+            .then(() => {
+                console.log('LogOut Successfully');
+                toast.success('LogOut Successfull');
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
 
     return (
         <div>
@@ -17,7 +33,9 @@ const NavBar = () => {
                             <NavLink className="btn btn-sm" to='/recommendations'><li>Recommendation For Me</li></NavLink>
                             <NavLink className="btn btn-sm" to='/'><li>My Queries</li></NavLink>
                             <NavLink className="btn btn-sm" to='/'><li>My recommendations</li></NavLink>
-                            <NavLink className="btn btn-sm" to='/login'><li>LogIn</li></NavLink>
+                            {
+                                user ? <NavLink onClick={handleSignOut} className="btn btn-sm"><li>LogOut</li></NavLink> : <NavLink className="btn btn-sm" to='/login'><li>LogIn</li></NavLink>
+                            }
                         </ul>
                     </div>
                     <img className="w-40" src={logo} alt="Product Hub" />
@@ -29,12 +47,16 @@ const NavBar = () => {
                         <NavLink className='text-white font-semibold hover:text-orange-400' to='/recommendations'><li>Recommendation For Me</li></NavLink>
                         <NavLink className='text-white font-semibold hover:text-orange-400' to='/'><li>My Queries</li></NavLink>
                         <NavLink className='text-white font-semibold hover:text-orange-400' to='/'><li>My recommendations</li></NavLink>
-                        <NavLink className='btn btn-sm bg-orange-400 border-none text-black' to='/login'><li>LogIn</li></NavLink>
+                        {
+                            user ? <NavLink onClick={handleSignOut} className='text-white font-semibold hover:text-orange-400'><li>LogOut</li></NavLink> : <NavLink className='text-white font-semibold hover:text-orange-400' to='/login'><li>LogIn</li></NavLink>
+                        }
                     </ul>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };
+
 
 export default NavBar;

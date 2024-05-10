@@ -12,6 +12,7 @@ import Login from './components/Login/Login.jsx';
 import Queries from './components/Queries/Queries.jsx';
 import AllRecommendation from './components/AllRecommendations/AllRecommendation.jsx';
 import Register from './components/Register/Register.jsx';
+import AuthProvider from './provider/AuthProvider.jsx';
 
 const router = createBrowserRouter([
   {
@@ -38,6 +39,14 @@ const router = createBrowserRouter([
       {
         path: '/recommendations',
         element: <AllRecommendation></AllRecommendation>,
+      },
+      {
+        path: '/myqueries',
+        element: ,
+      },
+      {
+        path: 'myrecommendations',
+        element: ,
       }
     ],
   },
@@ -45,6 +54,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )

@@ -1,8 +1,40 @@
 import { Link } from "react-router-dom";
+import useAuth from "../../hooks/useAuth";
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
 
-    
+    const { createUser } = useAuth();
+
+    const handleRegister = (e) => {
+        e.preventDefault();
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        const user = { name, email, password };
+
+        createUser(email, password)
+            .then((userCredential) => {
+                const user = userCredential.user;
+                console.log(user);
+                if (user) {
+                    toast.success('User created successfully!');
+                }
+            })
+            .then(() => {
+                axios.post('http://localhost:3000/users', user, { withCredentials: true })
+                    .then((res) => {
+                        console.log(res);
+                    })
+                    .catch((err) => {
+                        console.log(err);
+                        toast.error('Invalid email or password');
+                    })
+            })
+    }
 
     return (
         <div className="hero my-20">
@@ -11,7 +43,7 @@ const Register = () => {
                 <div className="card shrink-0 w-96 max-w-sm shadow-2xl bg-base-100">
                     <h1 className="text-3xl font-bold text-center mt-10">Sign Up Now!</h1>
 
-                    <form className="card-body">
+                    <form onSubmit={handleRegister} className="card-body">
 
 
                         <div className="form-control">
@@ -69,6 +101,7 @@ const Register = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };
