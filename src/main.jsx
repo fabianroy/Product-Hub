@@ -13,6 +13,9 @@ import Queries from './components/Queries/Queries.jsx';
 import AllRecommendation from './components/AllRecommendations/AllRecommendation.jsx';
 import Register from './components/Register/Register.jsx';
 import AuthProvider from './provider/AuthProvider.jsx';
+import MyQueries from './components/MyQueries/MyQueries';
+import MyRecommendations from './components/MyRecommendations/MyRecommendations';
+import PrivateRoute from './routes/PrivateRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -38,15 +41,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/recommendations',
-        element: <AllRecommendation></AllRecommendation>,
+        element: <PrivateRoute><AllRecommendation></AllRecommendation></PrivateRoute>,
       },
       {
         path: '/myqueries',
-        element: ,
+        element: <PrivateRoute><MyQueries></MyQueries></PrivateRoute>,
       },
       {
-        path: 'myrecommendations',
-        element: ,
+        path: '/myrecommendations',
+        element: <PrivateRoute><MyRecommendations></MyRecommendations></PrivateRoute>,
       }
     ],
   },

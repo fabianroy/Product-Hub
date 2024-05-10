@@ -30,9 +30,15 @@ const NavBar = () => {
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[2] p-2 shadow bg-base-100 rounded-box w-52">
                             <NavLink className="btn btn-sm" to='/'><li>Home</li></NavLink>
                             <NavLink className="btn btn-sm" to='/queries'><li>Queries</li></NavLink>
-                            <NavLink className="btn btn-sm" to='/recommendations'><li>Recommendation For Me</li></NavLink>
-                            <NavLink className="btn btn-sm" to='/'><li>My Queries</li></NavLink>
-                            <NavLink className="btn btn-sm" to='/'><li>My recommendations</li></NavLink>
+                            {
+                                user ? <NavLink className="btn btn-sm" to='/recommendations'><li>Recommendation For Me</li></NavLink> : null
+                            }
+                            {
+                                user ? <NavLink className="btn btn-sm" to='/myqueries'><li>My Queries</li></NavLink> : null
+                            }
+                            {
+                                user ? <NavLink className="btn btn-sm" to='/myrecommendations'><li>My recommendations</li></NavLink> : null
+                            }
                             {
                                 user ? <NavLink onClick={handleSignOut} className="btn btn-sm"><li>LogOut</li></NavLink> : <NavLink className="btn btn-sm" to='/login'><li>LogIn</li></NavLink>
                             }
@@ -44,9 +50,15 @@ const NavBar = () => {
                     <ul className="menu menu-horizontal px-1 flex items-center gap-6">
                         <NavLink className='text-white font-semibold hover:text-orange-400' to='/'><li>Home</li></NavLink>
                         <NavLink className='text-white font-semibold hover:text-orange-400' to='/queries'><li>Queries</li></NavLink>
-                        <NavLink className='text-white font-semibold hover:text-orange-400' to='/recommendations'><li>Recommendation For Me</li></NavLink>
-                        <NavLink className='text-white font-semibold hover:text-orange-400' to='/'><li>My Queries</li></NavLink>
-                        <NavLink className='text-white font-semibold hover:text-orange-400' to='/'><li>My recommendations</li></NavLink>
+                        {
+                            user ? <NavLink className='text-white font-semibold hover:text-orange-400' to='/recommendations'><li>Recommendation For Me</li></NavLink> : null
+                        }
+                        {
+                            user ? <NavLink className='text-white font-semibold hover:text-orange-400' to='/myqueries'><li>My Queries</li></NavLink> : null
+                        }
+                        {
+                            user ? <NavLink className='text-white font-semibold hover:text-orange-400' to='/myrecommendations'><li>My recommendations</li></NavLink> : null
+                        }
                         {
                             user ? <NavLink onClick={handleSignOut} className='text-white font-semibold hover:text-orange-400'><li>LogOut</li></NavLink> : <NavLink className='text-white font-semibold hover:text-orange-400' to='/login'><li>LogIn</li></NavLink>
                         }
