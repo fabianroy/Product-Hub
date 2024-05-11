@@ -16,6 +16,7 @@ import AuthProvider from './provider/AuthProvider.jsx';
 import MyQueries from './components/MyQueries/MyQueries';
 import MyRecommendations from './components/MyRecommendations/MyRecommendations';
 import PrivateRoute from './routes/PrivateRoute.jsx';
+import AddQueries from './components/MyQueries/AddQueries.jsx';
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: '/myrecommendations',
         element: <PrivateRoute><MyRecommendations></MyRecommendations></PrivateRoute>,
+      },
+      {
+        path: '/addqueries',
+        element: <PrivateRoute><AddQueries></AddQueries></PrivateRoute>,
       }
     ],
   },

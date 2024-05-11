@@ -13,8 +13,14 @@ const Register = () => {
         const name = e.target.name.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
+        const photoURL = e.target.photoURL.value;
 
-        const user = { name, email, password };
+        const user = { 
+            displayName: name,
+            email: email,
+            password: password,
+            photoURL: photoURL
+         };
 
         createUser(email, password)
             .then((userCredential) => {
@@ -69,6 +75,20 @@ const Register = () => {
                                 name="email"
                                 id="email"
                                 placeholder="Enter your email"
+                                className="input input-bordered"
+                                required
+                            />
+                        </div>
+
+                        <div className="form-control">
+                            <label htmlFor="image" className="label">
+                                Email
+                            </label>
+                            <input
+                                type="url"
+                                name="photoURL"
+                                id="photoURL"
+                                placeholder="Enter your photo URL"
                                 className="input input-bordered"
                                 required
                             />
