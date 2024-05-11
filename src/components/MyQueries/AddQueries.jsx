@@ -9,13 +9,18 @@ const AddQueries = () => {
 
     const { user } = useAuth();
 
-    const [userInfo, setUserInfo] = useState({});
+    const [userInfo, setUserInfo] = useState([]);
+
+    const url = `http://localhost:3000/users?email=${user.email}`;
 
     useEffect(() => {
-        axios.get(`http://localhost:3000/users?email=${user.email}`)
-            .then(res => setUserInfo(res.data[0]))
-            .catch(err => console.log(err))
-    }, [user.email]);
+        axios.get(url)
+            .then(res => {
+                const dataArray = res.data;
+                const userArray = dataArray.filter(data => data.email === user.email);
+                setUserInfo(userArray[0]);
+            })
+    }, [user.email, url]);
 
     const navigate = useNavigate();
 
@@ -36,7 +41,7 @@ const AddQueries = () => {
             productPhoto,
             queryTitle,
             boycottReason,
-            email: userInfo.email,
+            email: user.email,
             name: name,
             userPhoto: userInfo.photoURL,
             currentDate: new Date().toLocaleDateString(),
