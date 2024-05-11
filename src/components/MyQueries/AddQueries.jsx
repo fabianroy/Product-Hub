@@ -72,7 +72,7 @@ const AddQueries = () => {
                         </div>
                         <div className="flex flex-col md:flex-row gap-4 mt-4">
                             <input type="text" name="productPhoto" placeholder="Product Photo URL" className="input input-bordered w-full" />
-                            <input type="text" name="queryTitle" placeholder="Query Title" maxLength='46' className="input input-bordered w-full" />
+                            <input type="text" name="queryTitle" placeholder="Query Title" maxLength='60' className="input input-bordered w-full" />
                         </div>
                         <div className="flex flex-col md:flex-row gap-4 mt-4">
                             <input type="text" name="boycottReason" placeholder="Reason of Boycotting" maxLength='200' className="input input-bordered w-full" />
