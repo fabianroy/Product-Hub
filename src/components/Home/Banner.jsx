@@ -43,8 +43,8 @@ const Banner = () => {
                             <h2 className='text-7xl font-bold  text-center mx-auto'>Explore Limitless Alternatives: Your Gateway to Innovation</h2>
                             <p className='text-xl text-center'>Alternative product solutions provide innovative ways to be sustainable, efficient, and economically resilient.</p>
                             <div className='w-fit mx-auto'>
-                                <button className="btn bg-orange-600 border-none text-white mr-4">Discover Queries</button>
-                                <button className="btn bg-transparent border border-white text-white">Recommendations</button>
+                                <Link to="/queries" className="btn bg-orange-600 border-none text-white mr-4"><button>Discover Queries</button></Link>
+                                <Link to="/recommendations" className="btn bg-transparent border border-white text-white"><button>Recommendations</button></Link>
                             </div>
                         </div>
                     </div>
@@ -63,8 +63,8 @@ const Banner = () => {
                             <h2 className='text-7xl font-bold  text-center mx-auto'>Explore Limitless Alternatives: Your Gateway to Innovation</h2>
                             <p className='text-xl text-center'>Alternative product solutions provide innovative ways to be sustainable, efficient, and economically resilient.</p>
                             <div className='w-fit mx-auto'>
-                                <button className="btn bg-orange-600 border-none text-white mr-4">Discover Queries</button>
-                                <button className="btn bg-transparent border border-white text-white">Recommendations</button>
+                                <Link to="/queries" className="btn bg-orange-600 border-none text-white mr-4"><button>Discover Queries</button></Link>
+                                <Link to="/recommendations" className="btn bg-transparent border border-white text-white"><button>Recommendations</button></Link>
                             </div>
                         </div>
                     </div>
@@ -83,8 +83,8 @@ const Banner = () => {
                             <h2 className='text-7xl font-bold  text-center mx-auto'>Explore Limitless Alternatives: Your Gateway to Innovation</h2>
                             <p className='text-xl text-center'>Alternative product solutions provide innovative ways to be sustainable, efficient, and economically resilient.</p>
                             <div className='w-fit mx-auto'>
-                                <button className="btn bg-orange-600 border-none text-white mr-4">Discover Queries</button>
-                                <button className="btn bg-transparent border border-white text-white">Recommendations</button>
+                                <Link to="/queries" className="btn bg-orange-600 border-none text-white mr-4"><button>Discover Queries</button></Link>
+                                <Link to="/recommendations" className="btn bg-transparent border border-white text-white"><button>Recommendations</button></Link>
                             </div>
                         </div>
                     </div>
@@ -103,8 +103,8 @@ const Banner = () => {
                             <h2 className='text-7xl font-bold  text-center mx-auto'>Explore Limitless Alternatives: Your Gateway to Innovation</h2>
                             <p className='text-xl text-center'>Alternative product solutions provide innovative ways to be sustainable, efficient, and economically resilient.</p>
                             <div className='w-fit mx-auto'>
-                                <button className="btn bg-orange-600 border-none text-white mr-4">Discover Queries</button>
-                                <button className="btn bg-transparent border border-white text-white">Recommendations</button>
+                                <Link to="/queries" className="btn bg-orange-600 border-none text-white mr-4"><button>Discover Queries</button></Link>
+                                <Link to="/recommendations" className="btn bg-transparent border border-white text-white"><button>Recommendations</button></Link>
                             </div>
                         </div>
                     </div>
@@ -123,8 +123,8 @@ const Banner = () => {
                             <h2 className='text-7xl font-bold  text-center mx-auto'>Explore Limitless Alternatives: Your Gateway to Innovation</h2>
                             <p className='text-xl text-center'>Alternative product solutions provide innovative ways to be sustainable, efficient, and economically resilient.</p>
                             <div className='w-fit mx-auto'>
-                                <button className="btn bg-orange-600 border-none text-white mr-4">Discover Queries</button>
-                                <button className="btn bg-transparent border border-white text-white">Recommendations</button>
+                                <Link to="/queries" className="btn bg-orange-600 border-none text-white mr-4"><button>Discover Queries</button></Link>
+                                <Link to="/recommendations" className="btn bg-transparent border border-white text-white"><button>Recommendations</button></Link>
                             </div>
                         </div>
                     </div>

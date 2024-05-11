@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const QueryCard = ({ query }) => {
 
-    const { _id, productName, productBrand, productPhoto, queryTitle, boycottReason, rating } = query;
+    const { _id, productName, productBrand, productPhoto, queryTitle } = query;
 
     const handleDeleteQuery = () => {
         axios.delete(`http://localhost:3000/queries/${_id}`, { withCredentials: true })
@@ -19,19 +19,18 @@ const QueryCard = ({ query }) => {
 
     return (
         <div className='p-6 md:p-0'>
-            <div className="card md:w-[600px] bg-base-100 shadow-xl flex items-center flex-col md:flex-row p-4">
+            <div className="card md:w-[600px] md:h-80 bg-base-100 shadow-xl flex items-center flex-col md:flex-row p-6">
                 <div className='flex-1'>
-                    <figure><img className='w-full md:w-60 md:h-40' src={productPhoto} alt={productName} /></figure>
+                    <figure><img className='w-full md:w-52 md:h-52' src={productPhoto} alt={productName} /></figure>
                 </div>
                 <div className="card-body flex-1">
                     <h2 className="card-title">
                         {queryTitle}
                     </h2>
-                    <p className="text-gray-500 mt-2">{productName} - {productBrand}</p>
-                    <p className="text-gray-500 mt-2">{boycottReason}</p>
-                    <p className="text-gray-500 mt-2">{rating}</p>
+                    <p className="text-gray-500 mt-2">Product : {productName}</p>
+                    <p className="text-gray-500">Brand : {productBrand}</p>
                 </div>
-                <div className="flex md:flex-col flex-row gap-4">
+                <div className="flex flex-row md:flex-col gap-1 md:gap-4">
                     <Link className='btn bg-orange-400' to={`/queryDetails/${_id}`}><button>Details</button></Link>
                     <Link className='btn bg-orange-400' to={`/updatequery/${_id}`}><button>Update</button></Link>
                     <button onClick={handleDeleteQuery} className="btn bg-orange-400">Delete</button>
