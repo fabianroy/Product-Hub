@@ -1,8 +1,8 @@
 import axios from 'axios';
-import useAuth from './../../hooks/useAuth';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 const AddQueries = () => {
 
@@ -18,7 +18,7 @@ const AddQueries = () => {
         const productPhoto = form.productPhoto.value;
         const queryTitle = form.queryTitle.value;
         const boycottReason = form.boycottReason.value;
-        const rating = form.rating.value;
+        const name = form.name.value;
 
 
         const query = {
@@ -27,11 +27,10 @@ const AddQueries = () => {
             productPhoto,
             queryTitle,
             boycottReason,
-            rating,
-            userEmail: user.email,
-            userName: user.displayName,
-            userPhoto: user.photoURL,
-            currentDate: new Date().toLocaleDateString()
+            email: user.email,
+            name: name,
+            currentDate: new Date().toLocaleDateString(),
+            postedTime: new Date().toLocaleTimeString()
         }
 
         axios.post('http://localhost:3000/queries', query, { withCredentials: true })
@@ -54,7 +53,7 @@ const AddQueries = () => {
                     <form onSubmit={handleAddProduct}>
                         <div className="flex flex-col md:flex-row gap-4 mt-4">
                             <input type="text" name="productName" placeholder="Product Name" className="input input-bordered w-full" />
-                            <input type="number" name="productBrand" placeholder="Product Brand" className="input input-bordered w-full" />
+                            <input type="text" name="productBrand" placeholder="Product Brand" className="input input-bordered w-full" />
                         </div>
                         <div className="flex flex-col md:flex-row gap-4 mt-4">
                             <input type="text" name="productPhoto" placeholder="Product Photo URL" className="input input-bordered w-full" />
@@ -62,7 +61,7 @@ const AddQueries = () => {
                         </div>
                         <div className="flex flex-col md:flex-row gap-4 mt-4">
                             <input type="text" name="boycottReason" placeholder="Reason of Boycotting" className="input input-bordered w-full" />
-                            <input type="text" name="rating" placeholder="Rating" className="input input-bordered w-full" />
+                            <input type="text" name="name" placeholder="Your Name" className="input input-bordered w-full" />
                         </div>
                         <div className="mt-6 w-fit mx-auto">
                             <button className="btn w-60 md:w-96 bg-orange-400">Add Query</button>

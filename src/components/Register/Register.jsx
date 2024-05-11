@@ -26,9 +26,7 @@ const Register = () => {
             .then((userCredential) => {
                 const user = userCredential.user;
                 console.log(user);
-                if (user) {
-                    toast.success('User created successfully!');
-                }
+                toast.success('User created successfully');
             })
             .then(() => {
                 axios.post('http://localhost:3000/users', user, { withCredentials: true })
@@ -82,7 +80,7 @@ const Register = () => {
 
                         <div className="form-control">
                             <label htmlFor="image" className="label">
-                                Email
+                                Photo
                             </label>
                             <input
                                 type="url"
@@ -90,7 +88,6 @@ const Register = () => {
                                 id="photoURL"
                                 placeholder="Enter your photo URL"
                                 className="input input-bordered"
-                                required
                             />
                         </div>
 
