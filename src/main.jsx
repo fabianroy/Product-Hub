@@ -19,6 +19,7 @@ import PrivateRoute from './routes/PrivateRoute.jsx';
 import AddQueries from './components/MyQueries/AddQueries.jsx';
 import QueryDetails from './components/Queries/QueryDetails.jsx';
 import UpdateQuery from './components/MyQueries/UpdateQuery.jsx';
+import Recommend from './components/AllRecommendations/Recommend.jsx';
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,11 @@ const router = createBrowserRouter([
         element: <PrivateRoute><AllRecommendation></AllRecommendation></PrivateRoute>,
       },
       {
+        path: '/addrecommendations/:id',
+        element: <PrivateRoute><Recommend></Recommend></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:3000/queries/${params.id}`)
+      },
+      {
         path: '/myqueries',
         element: <PrivateRoute><MyQueries></MyQueries></PrivateRoute>,
       },
@@ -62,12 +68,12 @@ const router = createBrowserRouter([
       {
         path: '/querydetails/:id',
         element: <QueryDetails></QueryDetails>,
-        loader: ({params}) => fetch(`http://localhost:3000/queries/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:3000/queries/${params.id}`)
       },
       {
         path: '/updatequery/:id',
         element: <UpdateQuery></UpdateQuery>,
-        loader: ({params}) => fetch(`http://localhost:3000/queries/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:3000/queries/${params.id}`)
       },
     ],
   },

@@ -23,7 +23,7 @@ const QueryCard = ({ query }) => {
                     </div>
                     <div className="flex md:flex-col flex-row gap-2 w-fit md:w-full mx-auto p-4">
                         <Link className='btn btn-sm bg-orange-400' to={`/queryDetails/${_id}`}><button>Details</button></Link>
-                        <Link className='btn btn-sm bg-gray-50'><button>Recommend</button></Link>
+                        <Link className='btn btn-sm bg-gray-50' query={query} to={`/addrecommendations/${_id}`}><button>Recommend</button></Link>
                     </div>
                 </div>
             </div>
