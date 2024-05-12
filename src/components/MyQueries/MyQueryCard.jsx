@@ -34,7 +34,7 @@ const QueryCard = ({ query }) => {
                 <div className="flex flex-row md:flex-col gap-1 md:gap-4">
                     <Link className='btn bg-orange-400' to={`/queryDetails/${_id}`}><button>Details</button></Link>
                     <Link className='btn bg-orange-400' to={`/updatequery/${_id}`}><button>Update</button></Link>
-                    <button onClick={handleDeleteQuery} className="btn bg-orange-400">Delete</button>
+                    <button onClick={() => handleDeleteQuery(_id)} className='btn bg-red-400'><button>Delete</button></button>
                 </div>
             </div>
         </div>

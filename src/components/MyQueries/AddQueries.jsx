@@ -67,15 +67,15 @@ const AddQueries = () => {
                     <h3 className="text-center text-2xl font-semibold mb-6">Add a Query</h3>
                     <form onSubmit={handleAddProduct}>
                         <div className="flex flex-col md:flex-row gap-4 mt-4">
-                            <input type="text" name="productName" placeholder="Product Name" maxLength='16' className="input input-bordered w-full" />
-                            <input type="text" name="productBrand" placeholder="Product Brand" maxLength='20' className="input input-bordered w-full" />
+                            <input type="text" name="productName" placeholder="Product Name" minLength='3' maxLength='16' className="input input-bordered w-full" required />
+                            <input type="text" name="productBrand" placeholder="Product Brand" maxLength='20' className="input input-bordered w-full" required />
                         </div>
                         <div className="flex flex-col md:flex-row gap-4 mt-4">
-                            <input type="text" name="productPhoto" placeholder="Product Photo URL" className="input input-bordered w-full" />
-                            <input type="text" name="queryTitle" placeholder="Query Title" maxLength='60' className="input input-bordered w-full" />
+                            <input type="text" name="productPhoto" placeholder="Product Photo URL" className="input input-bordered w-full" required />
+                            <input type="text" name="queryTitle" placeholder="Query Title" minLength='16' maxLength='60' className="input input-bordered w-full" required />
                         </div>
                         <div className="flex flex-col md:flex-row gap-4 mt-4">
-                            <input type="text" name="boycottReason" placeholder="Reason of Boycotting" maxLength='200' className="input input-bordered w-full" />
+                            <input type="text" name="boycottReason" placeholder="Reason of Boycotting" minLength='60' maxLength='200' className="input input-bordered w-full" required />
                             <input type="text" name="name" defaultValue={userInfo.displayName} readOnly className="input input-bordered w-full" />
                         </div>
                         <div className="mt-6 w-fit mx-auto">
