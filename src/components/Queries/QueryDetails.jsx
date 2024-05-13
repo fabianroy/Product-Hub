@@ -1,8 +1,26 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 const QueryDetails = () => {
 
     const query = useLoaderData();
+
+    const [recommendations, setRecommendations] = useState([]);
+
+    const url = "http://localhost:3000/recommendations";
+
+    useEffect(() => {
+        axios.get(url)
+            .then(res => {
+                const dataArray = res.data;
+                const filteredData = dataArray.filter(data => data.queryId === query._id);
+                setRecommendations(filteredData);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }, [query._id]);
 
     const { productName, productBrand, productPhoto, queryTitle, boycottReason, name, userPhoto, currentDate, postedTime } = query;
 
@@ -17,6 +35,7 @@ const QueryDetails = () => {
                         <h1 className="text-2xl font-bold md:max-w-[600px]">{queryTitle}</h1>
                         <p className="mt-4 text-xl font-semibold">Product : {productName}</p>
                         <p className="mt-2 text-orange-600 font-semibold">Brand : {productBrand}</p>
+                        <p className="mt-4 font-semibold">Recommendations : {recommendations.length}</p>
                         <br />
                         <hr />
                         <p className="mt-6 text-lg md:max-w-[600px]">{boycottReason}</p>
