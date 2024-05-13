@@ -11,7 +11,7 @@ const AllRecommendation = () => {
     const [recommendations, setRecommendations] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/recommendations')
+        axios.get('http://localhost:3000/recommendations', { withCredentials: true })
             .then(res => {
                 const dataArray = res.data;
                 const userArray = dataArray.filter(data => data.queryEmail === user.email);

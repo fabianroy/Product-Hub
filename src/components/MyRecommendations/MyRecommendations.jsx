@@ -11,7 +11,7 @@ const MyRecommendations = () => {
     const url = `http://localhost:3000/recommendations?email=${user.email}`;
 
     useEffect(() => {
-        axios.get(url)
+        axios.get(url, { withCredentials: true })
             .then(res => {
                 setRecommendations(res.data);
             })

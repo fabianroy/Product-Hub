@@ -1,8 +1,9 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from "axios";
 
 const Login = () => {
 
@@ -10,7 +11,8 @@ const Login = () => {
 
     const { signIn } = useContext(AuthContext);
 
-    // const location = useLocation();
+    const location = useLocation();
+
     const Navigate = useNavigate();
 
     const handleLogin = (e) => {
@@ -19,14 +21,17 @@ const Login = () => {
         const password = e.target.password.value;
 
         signIn(email, password)
-            .then((userCredential) => {
-                const user = userCredential.user;
+            .then(result => {
+                const user = result.user;
                 console.log(user);
-                if (user) {
-                    Navigate('/');
-                } else {
-                    console.log('User not found');
-                }
+                Navigate(location?.state ? location?.state : '/');
+                 
+                const loggedInUser = {email};
+                console.log(loggedInUser);
+                axios.post('http://localhost:3000/jwt', loggedInUser)
+                    .then(res => {
+                        console.log(res.data);
+                    })
             })
 
             .catch((err) => {
