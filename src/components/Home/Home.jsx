@@ -10,7 +10,7 @@ const Home = () => {
     const [latestQueries, setLatestQueries] = useState([]);
 
     const url = "http://localhost:3000/queries";
-    // load 4 latest queries
+
     useEffect(() => {
         axios.get(url)
             .then(res => {
@@ -31,7 +31,7 @@ const Home = () => {
 
             <div>
                 <h1 className="text-2xl md:text-3xl font-bold text-center my-10">Latest Queries</h1>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 p-4 w-fit mx-auto">
                     {
                         latestQueries.map(query => (
                             <div key={query._id} className="card mt-5 md:max-w-80 h-fit md:max-h-[600px] bg-base-100 shadow-xl p-2 pb-4 md:p-0">
