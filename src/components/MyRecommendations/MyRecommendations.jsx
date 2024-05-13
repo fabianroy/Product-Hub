@@ -3,6 +3,9 @@ import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 
 const MyRecommendations = () => {
+
+    document.title = "My Recommendations";
+
     const { user } = useAuth();
     const [recommendations, setRecommendations] = useState([]);
     const url = `http://localhost:3000/recommendations?email=${user.email}`;
@@ -27,8 +30,6 @@ const MyRecommendations = () => {
                 console.error('Error deleting recommendation:', error);
             });
     }
-    
-        
 
     return (
         <div className="container mx-auto my-20">

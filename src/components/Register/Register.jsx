@@ -6,6 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Register = () => {
 
+    document.title = "Register";
+    
     const { createUser } = useAuth();
 
     const handleRegister = (e) => {

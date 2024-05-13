@@ -7,6 +7,8 @@ import { useEffect, useState } from 'react';
 
 const AddQueries = () => {
 
+    document.title = "Add Queries";
+
     const { user } = useAuth();
 
     const [userInfo, setUserInfo] = useState([]);

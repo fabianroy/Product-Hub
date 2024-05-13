@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 
 const Recommend = () => {
 
+    document.title = "Recommend";
+
     const query = useLoaderData();
     const { user } = useAuth();
     const navigate = useNavigate();

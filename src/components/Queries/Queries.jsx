@@ -3,6 +3,9 @@ import QueryCard from "./QueryCard";
 import { useState } from "react";
 
 const Queries = () => {
+
+    document.title = "All Queries";
+
     const allQueries = useLoaderData();
 
     const [searchTerm, setSearchTerm] = useState('');

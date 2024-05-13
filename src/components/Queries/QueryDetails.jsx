@@ -24,6 +24,8 @@ const QueryDetails = () => {
 
     const { productName, productBrand, productPhoto, queryTitle, boycottReason, name, userPhoto, currentDate, postedTime } = query;
 
+    document.title = `${queryTitle} - Details`
+
     return (
         <div>
             <div className="my-10 md:my-20">

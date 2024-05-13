@@ -4,6 +4,8 @@ import useAuth from "../../hooks/useAuth";
 
 const AllRecommendation = () => {
 
+    document.title = "Recommendations For Me";
+
     const { user } = useAuth();
 
     const [recommendations, setRecommendations] = useState([]);

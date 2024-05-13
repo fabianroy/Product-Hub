@@ -6,6 +6,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
 
+    document.title = "Login";
+
     const { signIn } = useContext(AuthContext);
 
     // const location = useLocation();

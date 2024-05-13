@@ -40,6 +40,8 @@ const UpdateQuery = () => {
             });
     }
 
+    document.title = `${queryTitle} - Update`
+
     return (
         <div className='my-20'>
             <div className=" md:w-fit mx-auto p-4">

@@ -6,6 +6,8 @@ import QueryCard from "./MyQueryCard";
 
 const MyQueries = () => {
 
+    document.title = "My Queries";
+
     const { user } = useAuth();
     const [queries, setQueries] = useState([]);
 
