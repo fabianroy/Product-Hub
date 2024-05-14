@@ -47,7 +47,12 @@ const AuthProvider = ({ children }) => {
                     .then(res => {
                         console.log("token response", res.data);
                     })
-            }   
+            } else {
+                axios.post('http://localhost:3000/logout', loggedUser, { withCredentials: true })
+                    .then(res => {
+                        console.log("logout response", res.data);
+                    })
+            }
         }
         );
         return unsubscribe;
