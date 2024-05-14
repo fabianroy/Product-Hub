@@ -31,7 +31,7 @@ const Register = () => {
                 toast.success('User created successfully');
             })
             .then(() => {
-                axios.post('http://localhost:3000/users', user, { withCredentials: true })
+                axios.post('https://product-hub-server-phi.vercel.app/users', user, { withCredentials: true })
                     .then((res) => {
                         console.log(res);
                     })

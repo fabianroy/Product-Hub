@@ -15,7 +15,7 @@ const Recommend = () => {
 
     const [userInfo, setUserInfo] = useState({});
 
-    const url = `http://localhost:3000/users?email=${user.email}`;
+    const url = `https://product-hub-server-phi.vercel.app/users?email=${user.email}`;
 
     useEffect(() => {
         axios.get(url)
@@ -56,7 +56,7 @@ const Recommend = () => {
 
         console.log(recommend);
 
-        axios.post('http://localhost:3000/recommendations', recommend, { withCredentials: true })
+        axios.post('https://product-hub-server-phi.vercel.app/recommendations', recommend, { withCredentials: true })
             .then(res => {
                 console.log(res);
                 toast.success('Recommendation added successfully!');

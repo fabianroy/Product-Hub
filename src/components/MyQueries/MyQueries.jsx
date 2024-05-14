@@ -11,7 +11,7 @@ const MyQueries = () => {
     const { user } = useAuth();
     const [queries, setQueries] = useState([]);
 
-    const url = `http://localhost:3000/queries?email=${user.email}`;
+    const url = `https://product-hub-server-phi.vercel.app/queries?email=${user.email}`;
 
     useEffect(() => {
         axios.get(url, { withCredentials: true })

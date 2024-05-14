@@ -43,12 +43,12 @@ const AuthProvider = ({ children }) => {
             setLoading(false);
 
             if (currentUser) {
-                axios.post('http://localhost:3000/jwt', loggedUser, { withCredentials: true })
+                axios.post('https://product-hub-server-phi.vercel.app/jwt', loggedUser, { withCredentials: true })
                     .then(res => {
                         console.log("token response", res.data);
                     })
             } else {
-                axios.post('http://localhost:3000/logout', loggedUser, { withCredentials: true })
+                axios.post('https://product-hub-server-phi.vercel.app/logout', loggedUser, { withCredentials: true })
                     .then(res => {
                         console.log("logout response", res.data);
                     })

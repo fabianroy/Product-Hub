@@ -11,7 +11,7 @@ const Queries = () => {
     const [filteredQueries, setFilteredQueries] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3000/queries', { withCredentials: true })
+        axios.get('https://product-hub-server-phi.vercel.app/queries', { withCredentials: true })
             .then(res => {
                 setQueries(res.data);
                 setFilteredQueries(res.data);

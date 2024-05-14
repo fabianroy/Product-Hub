@@ -8,7 +8,7 @@ const MyRecommendations = () => {
 
     const { user } = useAuth();
     const [recommendations, setRecommendations] = useState([]);
-    const url = `http://localhost:3000/recommendations?email=${user.email}`;
+    const url = `https://product-hub-server-phi.vercel.app/recommendations?email=${user.email}`;
 
     useEffect(() => {
         axios.get(url, { withCredentials: true })
@@ -22,7 +22,7 @@ const MyRecommendations = () => {
 
 
     const handleDelete = id => {
-        axios.delete(`http://localhost:3000/recommendations/${id}`)
+        axios.delete(`https://product-hub-server-phi.vercel.app/recommendations/${id}`)
             .then(res => {
                 console.log(res);
             })

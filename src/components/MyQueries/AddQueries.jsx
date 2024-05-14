@@ -13,7 +13,7 @@ const AddQueries = () => {
 
     const [userInfo, setUserInfo] = useState([]);
 
-    const url = `http://localhost:3000/users?email=${user.email}`;
+    const url = `https://product-hub-server-phi.vercel.app/users?email=${user.email}`;
 
     useEffect(() => {
         axios.get(url)
@@ -50,7 +50,7 @@ const AddQueries = () => {
             postedTime: new Date().toLocaleTimeString()
         }
 
-        axios.post('http://localhost:3000/queries', query, { withCredentials: true })
+        axios.post('https://product-hub-server-phi.vercel.app/queries', query, { withCredentials: true })
             .then((res) => {
                 console.log(res);
                 toast.success('Query added successfully!');

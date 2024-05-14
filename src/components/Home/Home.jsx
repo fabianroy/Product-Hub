@@ -9,7 +9,7 @@ const Home = () => {
 
     const [latestQueries, setLatestQueries] = useState([]);
 
-    const url = "http://localhost:3000/queries";
+    const url = "https://product-hub-server-phi.vercel.app/queries";
 
     useEffect(() => {
         axios.get(url)

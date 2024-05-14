@@ -7,7 +7,7 @@ const QueryCard = ({ query }) => {
     const { _id, productName, productBrand, productPhoto, queryTitle, currentDate } = query;
 
     const handleDeleteQuery = () => {
-        axios.delete(`http://localhost:3000/queries/${_id}`, { withCredentials: true })
+        axios.delete(`https://product-hub-server-phi.vercel.app/queries/${_id}`, { withCredentials: true })
             .then((res) => {
                 console.log(res);
                 console.log('Query deleted successfully!');

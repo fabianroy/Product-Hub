@@ -8,7 +8,7 @@ const QueryDetails = () => {
 
     const [recommendations, setRecommendations] = useState([]);
 
-    const url = "http://localhost:3000/recommendations";
+    const url = "https://product-hub-server-phi.vercel.app/recommendations";
 
     useEffect(() => {
         axios.get(url)

@@ -29,7 +29,7 @@ const UpdateQuery = () => {
             name
         }
 
-        axios.put(`http://localhost:3000/queries/${_id}`, query, { withCredentials: true })
+        axios.put(`https://product-hub-server-phi.vercel.app/queries/${_id}`, query, { withCredentials: true })
             .then((res) => {
                 console.log(res);
                 navigate('/myqueries');

@@ -28,7 +28,7 @@ const Login = () => {
                  
                 const loggedInUser = {email};
                 console.log(loggedInUser);
-                axios.post('http://localhost:3000/jwt', loggedInUser)
+                axios.post('https://product-hub-server-phi.vercel.app/jwt', loggedInUser)
                     .then(res => {
                         console.log(res.data);
                     })
