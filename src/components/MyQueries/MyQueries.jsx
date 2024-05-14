@@ -14,7 +14,7 @@ const MyQueries = () => {
     const url = `http://localhost:3000/queries?email=${user.email}`;
 
     useEffect(() => {
-        axios.get(url)
+        axios.get(url, { withCredentials: true })
             .then(res => setQueries(res.data))
             .catch(err => console.log(err))
     }, [url]);
