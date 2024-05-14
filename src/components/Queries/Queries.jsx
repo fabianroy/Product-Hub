@@ -44,7 +44,7 @@ const Queries = () => {
                 />
             </div>
 
-            <div className="w-4/5 md:w-4/5 mx-auto my-10 md:my-20 grid grid-cols-1 md:grid-cols-3 gap-6 p-1 md:p-0">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 p-4 w-fit mx-auto mt-10">
                 {filteredQueries.map(query => (
                     <QueryCard key={query._id} query={query} />
                 ))}
