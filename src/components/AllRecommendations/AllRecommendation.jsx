@@ -27,10 +27,10 @@ const AllRecommendation = () => {
     return (
         <div className="my-10 md:my-20">
             <h1 className="text-3xl font-semibold text-center my-6">Recommendations For Me</h1>
-            <div className="flex flex-wrap justify-center my-10">
+            <div className="flex flex-wrap justify-center my-10 mx-4 md:mx-0 gap-6">
                 {
                     recommendations.map(recommendation => (
-                        <div key={recommendation._id} className="flex flex-row w-[800px] mx-auto items-center bg-base-100 shadow-xl my-4">
+                        <div key={recommendation._id} className="flex flex-col md:flex-row w-[800px] mx-auto items-center bg-base-100 shadow-xl rounded-xl">
                             <figure>
                                 <img className="w-60 h-60 object-cover" src={recommendation.recommendationPhoto} alt={recommendation.recommendationProductName} />
                             </figure>
