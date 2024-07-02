@@ -14,7 +14,9 @@ Product Hub is a alternative product solution system that helps users to find be
 ## Technology Used
  React, JavaScript, Tailwind, Node.js, Express.js. MongoDB, Firebase
 
-## Want to run the app on your local machine? Here's the step by step guideline :
+### Want to run the app on your local machine? Here's the step by step guideline :
+---
+
 1. At first clone the repo.
 2. Then nstall react-router dom, tailwind (from framework guideline - Vite), daisyUI (add `env: { browser: true, node: true, es2020: true },` in the line 3 of .eslintrc.cjs file.
 3. Then open the terminal and write `npm run dev`.
