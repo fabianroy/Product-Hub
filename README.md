@@ -1,7 +1,6 @@
 # Product Hub
-### Assignment_ID: assignment_category_0009
 
-### Git Repo : https://github.com/Porgramming-Hero-web-course/b9a11-client-side-fabianroy
+### Git Repo : https://github.com/fabianroy/Product-Hub
 ### Live Link : https://product-hub-eb7ef.web.app
 
 ### Application Features
