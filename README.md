@@ -18,7 +18,7 @@ Product Hub is a alternative product solution system that helps users to find be
 ---
 
 1. At first clone the repo.
-2. Then nstall react-router dom, tailwind (from framework guideline - Vite), daisyUI (add `env: { browser: true, node: true, es2020: true },` in the line 3 of .eslintrc.cjs file.
+2. Then install react-router dom, tailwind (from framework guideline - Vite), daisyUI (add `env: { browser: true, node: true, es2020: true },` in the line 3 of .eslintrc.cjs file.
 3. Then open the terminal and write `npm run dev`.
 4. click (ctrl + right mouse button) on the localhost link.
 5. Enjoy the app!
